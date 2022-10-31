@@ -16,10 +16,6 @@ knitr::opts_chunk$set(
 # deckhand2
 
 <!-- badges: start -->
-```{r}
-usethis::use_lifecycle_badge("experimental")
-usethis::use_cran_badge()
-```
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 [![CRAN status](https://www.r-pkg.org/badges/version/deckhand2)](https://CRAN.R-project.org/package=deckhand2)
 <!-- badges: end -->

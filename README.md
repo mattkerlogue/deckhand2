@@ -5,16 +5,10 @@
 
 <!-- badges: start -->
 
-``` r
-usethis::use_lifecycle_badge("experimental")
-#> ✔ Setting active project to '/Users/matt/code/deckhand2'
-#> ✔ Adding Lifecycle: experimental badge to 'README.Rmd'
-#> • Re-knit 'README.Rmd' with `devtools::build_readme()`
-usethis::use_cran_badge()
-#> ✔ Adding CRAN status badge to 'README.Rmd'
-#> • Re-knit 'README.Rmd' with `devtools::build_readme()`
-```
-
+[![Lifecycle:
+experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
+[![CRAN
+status](https://www.r-pkg.org/badges/version/deckhand2)](https://CRAN.R-project.org/package=deckhand2)
 <!-- badges: end -->
 
 `{deckhand2}` is an extension to the `{pagedown}` package that uses the

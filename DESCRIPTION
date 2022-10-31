@@ -1,0 +1,11 @@
+Package: deckhand2
+Title: Create slide decks and grid layout paginated HTML reports
+Version: 0.0.0.9000
+Authors@R: 
+    person("Matt", "Kerlogue", , "matt.kerlogue@me.com", role = c("aut", "cre"))
+Description: An extension to the pagedown package that uses the CSS grid layout
+    module to provide extensive layout control of page based Rmarkdown reports. 
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.1

@@ -1,0 +1,22 @@
+layout:
+  size: A4
+  orientation: landscape
+fonts:
+  headings:
+    name: Open Sans
+    google: TRUE
+    base_format: sans-serif
+    size: 24
+    weight: 500
+    colour: "#0F36C7"
+  body:
+    name: Georgia
+    base_format: serif
+    size: 10
+    weight: 300
+    colour: "#0C0C0C"
+colours:
+  primary: "#0F36C7"
+  accents: ["#40ADFE", "#FFEC1C", "#8AC755", "#FF144C"]
+  light_grey: "#CCCCCC"
+  dark_grey: "#666666"

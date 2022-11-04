@@ -76,3 +76,223 @@
     grid-gap: 10px;
   }
 }
+
+/* ==== GRID POSITIONING ================================================ */
+
+/* Row start classes */
+.start-row-1 {
+  grid-row-start: 1;
+}
+
+.start-row-2 {
+  grid-row-start: 2;
+}
+
+.start-row-3 {
+  grid-row-start: 3;
+}
+
+.start-row-4 {
+  grid-row-start: 4;
+}
+
+.start-row-5 {
+  grid-row-start: 5;
+}
+
+.start-row-6 {
+  grid-row-start: 6;
+}
+
+.start-row-7 {
+  grid-row-start: 7;
+}
+
+.start-row-8 {
+  grid-row-start: 8;
+}
+
+.start-row-9 {
+  grid-row-start: 9;
+}
+
+.start-row-10 {
+  grid-row-start: 10;
+}
+
+.start-row-11 {
+  grid-row-start: 11;
+}
+
+.start-row-12 {
+  grid-row-start: 12;
+}
+
+/* Row end classes */
+
+.end-row-1 {
+  grid-row-end: 2;
+}
+
+.end-row-2 {
+  grid-row-end: 3;
+}
+
+.end-row-3 {
+  grid-row-end: 4;
+}
+
+.end-row-4 {
+  grid-row-end: 5;
+}
+
+.end-row-5 {
+  grid-row-end: 6;
+}
+
+.end-row-6 {
+  grid-row-end: 7;
+}
+
+.end-row-7 {
+  grid-row-end: 8;
+}
+
+.end-row-8 {
+  grid-row-end: 9;
+}
+
+.end-row-9 {
+  grid-row-end: 10;
+}
+
+.end-row-10 {
+  grid-row-end: 11;
+}
+
+.end-row-11 {
+  grid-row-end: 12;
+}
+
+.end-row-12 {
+  grid-row-end: 13;
+}
+
+/* Column start classes */
+
+.start-col-1 {
+  grid-column-start: 1;
+}
+
+.start-col-2 {
+  grid-column-start: 2;
+}
+
+.start-col-3 {
+  grid-column-start: 3;
+}
+
+.start-col-4 {
+  grid-column-start: 4;
+}
+
+.start-col-5 {
+  grid-column-start: 5;
+}
+
+.start-col-6 {
+  grid-column-start: 6;
+}
+
+.start-col-7 {
+  grid-column-start: 7;
+}
+
+.start-col-8 {
+  grid-column-start: 8;
+}
+
+.start-col-9 {
+  grid-column-start: 9;
+}
+
+.start-col-10 {
+  grid-column-start: 10;
+}
+
+.start-col-11 {
+  grid-column-start: 11;
+}
+
+.start-col-12 {
+  grid-column-start: 12;
+}
+
+/* Column end classes */
+
+.end-col-1 {
+  grid-column-end: 2;
+}
+
+.end-col-2 {
+  grid-column-end: 3;
+}
+
+.end-col-3 {
+  grid-column-end: 4;
+}
+
+.end-col-4 {
+  grid-column-end: 5;
+}
+
+.end-col-5 {
+  grid-column-end: 6;
+}
+
+.end-col-6 {
+  grid-column-end: 7;
+}
+
+.end-col-7 {
+  grid-column-end: 8;
+}
+
+.end-col-8 {
+  grid-column-end: 9;
+}
+
+.end-col-9 {
+  grid-column-end: 10;
+}
+
+.end-col-10 {
+  grid-column-end: 11;
+}
+
+.end-col-11 {
+  grid-column-end: 12;
+}
+
+.end-col-12 {
+  grid-column-end: 13;
+}
+
+/* ==== BASE STYLING ==================================================== */
+
+.grid-page p {
+  margin: 0px;
+  display: inline-block;
+}
+
+.grid-page div {
+  display: flex;
+}
+
+img {
+  margin: auto;
+}
+
+.grid-box {
+  border: 1px solid #cccccc;
+}

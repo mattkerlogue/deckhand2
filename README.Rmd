@@ -24,11 +24,18 @@ knitr::opts_chunk$set(
 layout module to provide extensive layout control of page based R Markdown
 reports, such as when creating slide decks.
 
-## In development
-This package is currently under development and not yet ready for general use.
-You can track general progress in the lead [GH issue](https://github.com/mattkerlogue/deckhand2/issues/1).
+**This package is currently under development and not yet intended for general 
+use.** You can track general progress in the lead 
+[issue](https://github.com/mattkerlogue/deckhand2/issues/1).
 
-## History, purpose & acknoweldgements
+## Installation
+
+```r
+install.packages("remotes")
+remotes::install.github("mattkerlogue/deckhand2")
+```
+
+## History & purpose
 
 `{deckhand2}` is a generalised successor to the `{deckhand}` package that I
 developed when working at the Cabinet Office. Individuals working in other

@@ -15,13 +15,18 @@ status](https://www.r-pkg.org/badges/version/deckhand2)](https://CRAN.R-project.
 CSS grid layout module to provide extensive layout control of page based
 R Markdown reports, such as when creating slide decks.
 
-## In development
+**This package is currently under development and not yet intended for
+general use.** You can track general progress in the lead
+[issue](https://github.com/mattkerlogue/deckhand2/issues/1).
 
-This package is currently under development and not yet ready for
-general use. You can track general progress in the lead [GH
-issue](https://github.com/mattkerlogue/deckhand2/issues/1).
+## Installation
 
-## History, purpose & acknoweldgements
+``` r
+install.packages("remotes")
+remotes::install.github("mattkerlogue/deckhand2")
+```
+
+## History & purpose
 
 `{deckhand2}` is a generalised successor to the `{deckhand}` package
 that I developed when working at the Cabinet Office. Individuals working

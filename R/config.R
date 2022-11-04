@@ -40,18 +40,24 @@ new_config_yml <- function(path = NULL, template = NULL) {
 #'
 #' @param config_yml A YAML file with deckhand configuration settings
 #' @param write Whether to write the CSS to a file
+#' @param dh_dir Optionally the folder to look for config files
 #'
 #' @return If `write = TRUE` invisibly returns the path of the CSS file,
 #'   otherwise it will print the CSS to the console and return it as a
 #'   character vector.
 #' @export
-deckhand_config_to_css <- function(config_yml = NULL, write = TRUE) {
+deckhand_config_to_css <- function(config_yml = NULL, write_files = TRUE,
+                                   dh_dir = NULL, display = !write_files) {
+
+  if (is.null(dh_dir)) {
+    dh_dir <- here::here()
+  }
 
   # get the config file
   chk_deckhand_config <- FALSE
   if (is.null(config_yml)) {
-    if (file.exists(here::here("_deckhand.yml"))) {
-      config_yml <- here::here("_deckhand.yml")
+    if (file.exists(file.path(dh_dir, "_deckhand.yml"))) {
+      config_yml <- file.path(dh_dir, "_deckhand.yml")
       chk_deckhand_config <- TRUE
     }
   } else {
@@ -61,14 +67,19 @@ deckhand_config_to_css <- function(config_yml = NULL, write = TRUE) {
   # copy configuration yml if none found exist
   if (!chk_deckhand_config) {
 
-    message("No deckhand configuration found, copying defaults")
+    if (write_files) {
+      warning("No deckhand configuration found, copying defaults")
 
-    config_yml <- here::here("_deckhand.yml")
+      config_yml <- file.path(dh_dir, "_deckhand.yml")
 
     file.copy(
       system.file("resources", "_deckhand.yml", package = "deckhand2"),
       config_yml
     )
+
+    } else {
+      config_yml <- system.file("resources", "_deckhand.yml", package = "deckhand2")
+    }
 
   }
 
@@ -87,12 +98,15 @@ deckhand_config_to_css <- function(config_yml = NULL, write = TRUE) {
     warning("Overwriting existing deckhand CSS file")
   }
 
-  if (write) {
-    writeLines(deckhand_css, deckhand_css_file)
+  if (display) {
+      cat(deckhand_css)
+  }
+
+  if (write_files) {
+    writeLines(deckhand_css, file.path(deckhand_css_file))
     return(invisible(deckhand_css_file))
   } else {
-    cat(deckhand_css)
-    return(deckhand_css)
+    return(invisible(deckhand_css))
   }
 
 }

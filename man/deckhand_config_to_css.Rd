@@ -4,15 +4,24 @@
 \alias{deckhand_config_to_css}
 \title{Convert deckhand configuration YAML to a CSS file}
 \usage{
-deckhand_config_to_css(config_yml = NULL, write = TRUE)
+deckhand_config_to_css(
+  config_yml = NULL,
+  write_files = TRUE,
+  dh_dir = NULL,
+  display = !write_files
+)
 }
 \arguments{
 \item{config_yml}{A YAML file with deckhand configuration settings}
 
-\item{write}{Whether to write the CSS to a file}
+\item{write_files}{Whether to write the CSS to a file}
+
+\item{dh_dir}{Optionally the folder to look for config files}
+
+\item{display}{Whether to display the generated CSS in the console}
 }
 \value{
-If \code{write = TRUE} invisibly returns the path of the CSS file,
+If \code{write_files = TRUE} invisibly returns the path of the CSS file,
 otherwise it will print the CSS to the console and return it as a
 character vector.
 }

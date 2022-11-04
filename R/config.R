@@ -39,10 +39,11 @@ new_config_yml <- function(path = NULL, template = NULL) {
 #' managing general settings.
 #'
 #' @param config_yml A YAML file with deckhand configuration settings
-#' @param write Whether to write the CSS to a file
+#' @param write_files Whether to write the CSS to a file
 #' @param dh_dir Optionally the folder to look for config files
+#' @param display Whether to display the generated CSS in the console
 #'
-#' @return If `write = TRUE` invisibly returns the path of the CSS file,
+#' @return If `write_files = TRUE` invisibly returns the path of the CSS file,
 #'   otherwise it will print the CSS to the console and return it as a
 #'   character vector.
 #' @export

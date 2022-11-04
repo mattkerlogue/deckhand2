@@ -100,6 +100,12 @@ deckhand_config_to_css <- function(config_yml = NULL, write = TRUE) {
 # get deckhand configuration settings from a YAML file
 get_deckhand_config <- function(config_yml = NULL) {
 
+  if (!is.null(config_yml)) {
+    if (!grepl("\\.ya?ml$", config_yml)) {
+      stop("config_yml does not appear to be a YAML file")
+    }
+  }
+
   # read in the base configuration
   default_config <- yaml::read_yaml(
     system.file("resources", "_deckhand.yml", package = "deckhand2")
@@ -328,16 +334,104 @@ get_deckhand_config <- function(config_yml = NULL) {
 
   deckhand_config["colour_accent_n"] <- ac
 
+  class(deckhand_config) <- "deckhand_config"
+
   return(deckhand_config)
 
 }
 
+# general validation
+is_deckhand_config <- function(deckhand_config) {
+
+  if (typeof(deckhand_config) != "list") {
+    return(FALSE)
+  }
+
+  if (class(deckhand_config) != "deckhand_config") {
+    return(FALSE)
+  }
+
+  if (length(deckhand_config) != 20) {
+    return(FALSE)
+  }
+
+  dc_names <- c(
+    "page_size",
+    "headings_font_name",
+    "headings_font_base_format",
+    "headings_font_size",
+    "headings_font_weight",
+    "headings_font_colour",
+    "body_font_name",
+    "body_font_base_format",
+    "body_font_size",
+    "body_font_weight",
+    "body_font_colour",
+    "google_fonts_url",
+    "colour_primary",
+    "colour_light_grey",
+    "colour_dark_grey",
+    "colour_accent_1",
+    "colour_accent_2",
+    "colour_accent_3",
+    "colour_accent_4",
+    "colour_accent_n"
+  )
+
+  if (!all.equal(names(deckhand_config), dc_names)) {
+    return(FALSE)
+  }
+
+  dc_classes <- c(
+    "character",
+    "character",
+    "character",
+    "integer",
+    "integer",
+    "character",
+    "character",
+    "character",
+    "integer",
+    "integer",
+    "character",
+    "character",
+    "character",
+    "character",
+    "character",
+    "character",
+    "character",
+    "character",
+    "character",
+    "integer"
+  )
+
+  item_classes <- character(0)
+
+  for (i in deckhand_config) {
+    item_classes <- c(item_classes, class(i))
+  }
+
+  if (!identical(item_classes, dc_classes)) {
+    return(FALSE)
+  }
+
+  if (unique(lengths(deckhand_config)) != 1) {
+    return(FALSE)
+  }
+
+  return(TRUE)
+
+}
 
 # convert deckhand config into CSS
 generate_deckhand_css <- function(deckhand_config = NULL) {
 
   if (is.null(deckhand_config)) {
     deckhand_config <- get_deckhand_config()
+  }
+
+  if (!is_deckhand_config(deckhand_config)) {
+    stop("deckhand_config is not in valid deckahnd_config format")
   }
 
   base_css <- glue::glue_data(
